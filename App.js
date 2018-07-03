@@ -83,28 +83,30 @@ export default class App extends React.Component {
         },{
             navigationOptions: {
                 tabBarOptions: {
-                    showLabel: false
+                    showLabel: false,
+                    activeBackgroundColor: '#FF9100',
+                    inactiveBackgroundColor: '#FFAB40'
                 }
             }
         });
 
         HomeStack.navigationOptions = {
             tabBarIcon: () => {
-                return <HomeIcon name="home" size={25}/>;
+                return <HomeIcon name="home" size={25} style={{color: '#424242'}}/>;
             }
 
         };
 
         MapStack.navigationOptions = {
             tabBarIcon: () => {
-                return <MapIcon name="map-marker-plus" size={25}/>;
+                return <MapIcon name="map-marker-plus" size={25} style={{color: '#424242'}}/>;
             },
             tabBarVisible: false
         };
 
         ListSpotsStack.navigationOptions = {
             tabBarIcon: () => {
-                return <ListIcon name="view-list" size={25}/>;
+                return <ListIcon name="view-list" size={25} style={{color: '#424242'}}/>;
             }
         };
 

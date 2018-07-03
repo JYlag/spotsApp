@@ -31,7 +31,7 @@ class AccountSection extends Component {
 
     render() {
         return (
-          <View style={{ borderBottomWidth: 1, borderColor: '#BDBDBD'}}>
+          <View style={{ borderBottomWidth: 1, borderColor: '#BDBDBD', backgroundColor: '#FFFFFF'}}>
               <View style={styles.accountContainer}>
                   <TouchableOpacity
                   title="profilePicture"

@@ -5,7 +5,7 @@ import Plus from 'react-native-vector-icons/MaterialCommunityIcons';
 import Note from "./Note";
 import Check from 'react-native-vector-icons/MaterialCommunityIcons';
 import Cancel from 'react-native-vector-icons/MaterialCommunityIcons';
-import { noteUpdate } from "../../actions/NoteActions";
+import { formNoteUpdate } from "../../actions/FormActions";
 import { connect } from 'react-redux'
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -14,6 +14,7 @@ class NotesList extends Component {
 
     state = {
         notes: [],
+        note: '',
         add: false,
         noteModalHeight: 0
     }
@@ -28,13 +29,15 @@ class NotesList extends Component {
     // Handler to submit the note.
     // NOTE: Does not save the note until the SAVE button is pressed.
     onSubmitNote() {
-        this.state.notes.push(this.props.note.value);
+        this.state.notes.push(this.state.note);
+        this.props.formNoteUpdate(this.state.notes);
+        this.setState({ note: '' });
         this.setState({ add: false });
     }
 
     // Handler to cancel any submission of a note.
     onNoteCancel() {
-        this.setState({ add: false });
+        this.setState({ add: false, note: '' });
     }
 
     //===== HELPER METHODS ======>
@@ -62,7 +65,8 @@ class NotesList extends Component {
                             <View onLayout={this.onLayout} style={{ flexDirection: 'row', height: SCREEN_HEIGHT*0.25  }}>
                                 <TextInput
                                 style={[ styles.noteInputStyle, { height: this.state.noteModalHeight }]}
-                                onChangeText={ value => { this.props.noteUpdate({ value })} }
+                                value={this.state.note}
+                                onChangeText={ value => {this.setState({ note: value})} }
                                 placeholder="Enter Note..."
                                 multiline={true}
                                 />
@@ -93,8 +97,8 @@ class NotesList extends Component {
 
     // Renders the submitted notes.
     renderNotesList() {
-        if ( this.state.notes.length > 0 ) {
-            return this.state.notes.map( note => {
+        if ( this.props.notes.length > 0 ) {
+            return this.props.notes.map( note => {
                 return (
                     <Note
                     key={note}
@@ -165,9 +169,9 @@ const styles = {
 }
 
 const mapStateToProps = state => {
-    const { note, notes } = state.note;
+    const { note, notes } = state.form;
 
     return { note, notes };
 }
 
-export default connect(mapStateToProps, { noteUpdate })(NotesList);
+export default connect(mapStateToProps, { formNoteUpdate })(NotesList);

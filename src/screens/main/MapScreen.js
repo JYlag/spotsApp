@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {View, Image, Dimensions, Modal, StatusBar} from 'react-native';
-import { Permissions, Location, ImagePicker } from 'expo';
+import {View, Image, Dimensions } from 'react-native';
+import { Permissions, Location } from 'expo';
 import MapView, { AnimatedRegion, Animated } from 'react-native-maps';
 import MapButton from "../../components/common/MapButton";
 import CurrentLocationButton from "../../components/common/CurrentLocationButton";
 import CloseModalButton from "../../components/common/CloseModalButton";
 import MapSearchBar from "../../components/common/MapSearchBar";
-import AddSpotScreen from "./AddSpotScreen";
 import { saveSpot } from "../../actions/SpotActions";
+import { currentLocationChanged } from "../../actions/MapActions";
 import { connect } from "react-redux";
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -16,19 +16,7 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 class MapScreen extends Component {
 
     state = {
-        currentLocation: {
-            latitude: 0,
-            longitude: 0,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421
-        },
-        coordinate: new AnimatedRegion({
-            latitude: 0,
-            longitude: 0
-        }),
-        addSpotVisible: false,
-        photos: [],
-        errorMessage: null,
+        errorMessage: null
     };
 
     //===== LIFECYCLE METHODS ======>
@@ -37,7 +25,6 @@ class MapScreen extends Component {
     // Adds listener and provides a callback function when this screen is focused.
     componentDidMount() {
         const navigationWillFocusListener = this.props.navigation.addListener('willFocus', () => {
-            this.setState({ visible: true });
             this.getCurrentLocation();
         })
 
@@ -56,25 +43,7 @@ class MapScreen extends Component {
 
     // Action handler to update region on map when cursor is moved.
     onRegionChangeComplete(changedRegion) {
-        let { latitude, longitude } = changedRegion;
-        this.setState({ coordinate: { latitude, longitude }});
-        this.setState({ currentLocation: changedRegion });
-    }
-
-    // Render adding a spot screen.
-    renderAddModal() {
-        if ( this.state.addSpotVisible ) {
-            return (
-                <AddSpotScreen
-                addSpotVisible={this.state.addSpotVisible}
-                currentLocation={this.state.currentLocation}
-                onPressCancel={this.onPressCancel.bind(this)}
-                onPressSave={this.onPressSave.bind(this)}
-                pickImage={this.pickImage.bind(this)}
-                photos={this.state.photos}
-                />
-            );
-        }
+        this.props.currentLocationChanged(changedRegion);
     }
 
     // Fetches current location and stores in in currentLocation state.
@@ -92,36 +61,12 @@ class MapScreen extends Component {
         var region = {
             latitude: latitude,
             longitude: longitude,
-            latitudeDelta: this.state.currentLocation.latitudeDelta,
-            longitudeDelta: this.state.currentLocation.longitudeDelta
+            latitudeDelta: this.props.latitudeDelta,
+            longitudeDelta: this.props.longitudeDelta
         };
 
-        this.setState({ currentLocation: region });
-        this.setState({ coordinate: {latitude, longitude} });
+        this.props.currentLocationChanged(region);
     }
-
-    pickImage = async () => {
-
-        let { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-
-        if ( status !== 'granted') {
-            this.setState({ errorMessage: 'Camera Roll access was denied.' });
-        }
-
-        this.setState({ addSpotVisible: false });
-
-        let result = await ImagePicker.launchImageLibraryAsync({
-            allowsEditing: true,
-            aspect: [4, 3],
-        });
-
-        if (!result.cancelled) {
-            //this.setState({ picture: { uri: result.uri } });
-            this.state.photos.push('uri', result.uri);
-        }
-
-        console.log(this.state.photos);
-    };
 
     //===== BUTTON PRESS HANDLERS =======>
 
@@ -132,34 +77,23 @@ class MapScreen extends Component {
 
     // onPress button action handler for button
     onPressMarkButton() {
-        this.setState({ addSpotVisible: true });
-    }
-
-    // onPress button action to cancel saving spot.
-    onPressCancel() {
-        this.setState({ addSpotVisible: false });
-    }
-
-    // onPress button action to complete save spot.
-    onPressSave() {
-        const { title, address, notes } = this.props;
-
-        this.props.saveSpot(
-            this.state.currentLocation,
-            title,
-            address,
-            notes
-        );
-        this.setState({ addSpotVisible: false });
-        this.props.navigation.navigate('listSpots');
+        this.props.navigation.navigate('addSpot');
     }
 
     render() {
+
+        let { latitude, latitudeDelta, longitude, longitudeDelta } = this.props;
+
         return (
             <View style={{ flex: 1 }} onLayout={this.onLayout}>
                 <MapView
                 style={{ flex: 1 }}
-                region={ this.state.currentLocation }
+                region={{
+                    latitude: latitude,
+                    latitudeDelta: latitudeDelta,
+                    longitude: longitude,
+                    longitudeDelta: longitudeDelta
+                }}
                 onRegionChangeComplete={this.onRegionChangeComplete.bind(this)}
                 rotateEnabled={false}
                 showsUserLocation={true}
@@ -182,7 +116,6 @@ class MapScreen extends Component {
                     onPress={this.getCurrentLocation}
                     underlayColor="#FF8F00"
                 />
-                {this.renderAddModal()}
             </View>
         );
     }
@@ -203,13 +136,20 @@ const styles = {
 }
 
 const mapStateToProps = state => {
+
+    const { latitude, longitude, latitudeDelta, longitudeDelta } = state.map;
+
     const { title, address, notes } = state.spots;
 
     return {
         title,
         address,
-        notes
+        notes,
+        latitude,
+        latitudeDelta,
+        longitude,
+        longitudeDelta
     };
 };
 
-export default connect(mapStateToProps, { saveSpot })(MapScreen);
+export default connect(mapStateToProps, { saveSpot, currentLocationChanged })(MapScreen);

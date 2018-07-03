@@ -5,10 +5,6 @@ import {
 } from "../actions/types";
 
 const INITIAL_STATE = {
-    title: '',
-    address: '',
-    notes: [],
-    visible: true,
     spots: []
 };
 

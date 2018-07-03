@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { Permissions, ImagePicker } from 'expo';
 import NotesList from "./NotesList";
 import Title from 'react-native-vector-icons/MaterialCommunityIcons';
 import Address from 'react-native-vector-icons/MaterialCommunityIcons';
 import PhotoSection from "./PhotoSection";
+import {
+    formTitleUpdate,
+    formAddressUpdate,
+    formPhotoUpdate
+} from "../../actions/FormActions";
+
+import { connect } from 'react-redux';
 
 class AddMarkForm extends Component {
+
+    onTitleChange(text) {
+        this.props.formTitleUpdate(text);
+    }
+
+    onAddressChange(text) {
+        this.props.formAddressUpdate(text);
+    }
+
     render() {
         return (
             <View style={styles.formContainer}>
@@ -19,7 +36,8 @@ class AddMarkForm extends Component {
                     <TextInput
                     placeholder="Title"
                     style={styles.titleStyle}
-                    onChangeText={value => {this.props.onTitleChange(value)}}
+                    value={this.props.title}
+                    onChangeText={this.onTitleChange.bind(this)}
                     autoCorrect={false}
                     />
                 </View>
@@ -33,7 +51,8 @@ class AddMarkForm extends Component {
                     <TextInput
                     placeholder="Address"
                     style={styles.addressStyle}
-                    onChangeText={value => {this.props.onAddressChange(value)}}
+                    value={this.props.address}
+                    onChangeText={this.onAddressChange.bind(this)}
                     autoCorrect={false}
                     />
                 </View>
@@ -42,10 +61,7 @@ class AddMarkForm extends Component {
                 </View>
 
                 <View style={{ marginHorizontal: 10, flexDirection: 'row'}}>
-                    <PhotoSection
-                    pickImage={this.props.pickImage}
-                    photos={this.props.photos}
-                    />
+                    <PhotoSection/>
                 </View>
             </View>
         );
@@ -83,4 +99,11 @@ const styles = {
     }
 }
 
-export default AddMarkForm;
+const mapStateToProps = state => {
+
+    const { title, address } = state.form;
+
+    return { title, address };
+};
+
+export default connect(mapStateToProps, { formTitleUpdate, formAddressUpdate, formPhotoUpdate} )(AddMarkForm);

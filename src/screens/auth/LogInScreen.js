@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Dimensions } from 'react-native';
+import { View, Text, TextInput, Dimensions, Image } from 'react-native';
+import LoginSignUpButton from "../../components/common/LoginSignUpButton";
+
 import {connect} from 'react-redux';
 import {
     passwordChanged,
     usernameChanged,
     loginUser
 } from "../../actions/AuthActions";
-import LoginSignUpButton from "../../components/common/LoginSignUpButton";
+
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT= Dimensions.get('window').height;
@@ -47,6 +49,11 @@ class LoginScreen extends Component {
     render() {
         return (
             <View style={{flex: 1, backgroundColor: '#FFB74D'}}>
+
+                <View style={styles.logoContainer}>
+                    <Image source={require('../../assets/images/SpotsFullLogo.png')} style={styles.logoStyle}/>
+                </View>
+
                 <View style={styles.authFieldContainer}>
                     <View style={{ marginBottom: 12 }}>
                         <TextInput
@@ -111,6 +118,14 @@ const styles = {
         fontSize: 15,
         padding: 8,
         backgroundColor: '#FFFFFF'
+    },
+    logoContainer: {
+        alignSelf: 'center',
+        top: 100
+    },
+    logoStyle: {
+        height: 188,
+        width: 275
     },
     errorStyle: {
         color: '#F44336'

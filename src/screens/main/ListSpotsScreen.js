@@ -16,7 +16,9 @@ class ListSpotsScreen extends Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: "Spots!",
+            title: "MY SPOTS",
+            headerStyle: { backgroundColor: '#FF9100'},
+            headerTitleStyle: { color: '#F5F5F5' }
         }
     };
 
@@ -46,7 +48,7 @@ class ListSpotsScreen extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, flexDirection: 'column' }}>
+            <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#F5F5F5' }}>
                 <AccountSection/>
                 <SpotViewMode
                 listPress={this.listPress.bind(this)}
