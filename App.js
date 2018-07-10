@@ -4,6 +4,7 @@ import { createBottomTabNavigator, createStackNavigator } from 'react-navigation
 import { Provider } from 'react-redux';
 import store from './src/store';
 import firebase from 'firebase';
+import { RNS3 } from 'react-native-aws3';
 
 // ===== ICON IMPORTS =====>
 import HomeIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -20,19 +21,30 @@ import Map from './src/screens/main/MapScreen';
 import ListSpots from './src/screens/main/ListSpotsScreen';
 import Settings from './src/screens/main/SettingsScreen';
 import AddSpotScreen from "./src/screens/main/AddSpotScreen";
+import Spot from "./src/components/Spot";
+
+const config = {
+    apiKey: "AIzaSyBKsVfwq1WazusWdBxnKs9hSx7I-0biwS8",
+    authDomain: "spots-81d2c.firebaseapp.com",
+    databaseURL: "https://spots-81d2c.firebaseio.com",
+    projectId: "spots-81d2c",
+    storageBucket: "spots-81d2c.appspot.com",
+    messagingSenderId: "365097605984"
+};
+export const options = {
+    keyPrefix: 'photos/',
+    bucket: "spots-jylagan",
+    region: "us-west-2",
+    accessKey: "AKIAJ4F6ZQBVQDSR3WUA",
+    secretKey: "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",
+    successActionStatus: 201
+};
 
 export default class App extends React.Component {
 
-    componentDidMount() {
-        const config = {
-            apiKey: "AIzaSyBKsVfwq1WazusWdBxnKs9hSx7I-0biwS8",
-            authDomain: "spots-81d2c.firebaseapp.com",
-            databaseURL: "https://spots-81d2c.firebaseio.com",
-            projectId: "spots-81d2c",
-            storageBucket: "spots-81d2c.appspot.com",
-            messagingSenderId: "365097605984"
-        };
 
+
+    componentDidMount() {
         firebase.initializeApp(config);
     }
 
@@ -65,7 +77,10 @@ export default class App extends React.Component {
             }
         });
 
-        let ListSpotsStack = createStackNavigator({ listSpots: { screen: ListSpots }});
+        let ListSpotsStack = createStackNavigator({
+            listSpots: { screen: ListSpots },
+            spot: { screen: Spot }
+        });
 
         let AuthStack = createStackNavigator({
             login: { screen: LoginScreen},

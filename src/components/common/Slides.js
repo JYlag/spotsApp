@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, Dimensions } from 'react-native';
+import { SCREEN_WIDTH } from "../../reducers/CONST_VALUES";
 import { Button } from "react-native-elements";
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
 
 class Slides extends Component {
 

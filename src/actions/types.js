@@ -20,9 +20,6 @@ export const FORM_TITLE_UPDATE = 'form_title_update';
 export const FORM_ADDRESS_UPDATE = 'form_address_update';
 export const CLEAR_SPOT_FORM = 'clear_spot_form';
 
-export const SPOT_TITLE_UPDATED = 'spot_title_updated';
-export const SPOT_ADDRESS_UPDATED = 'spot_address_updated';
-export const SPOT_NOTES_UPDATED = 'spot_notes_updated';
 export const SAVE_SPOT = 'save_spot';
 export const SPOT_FETCH_SUCCESS = 'spot_fetch_success';
 

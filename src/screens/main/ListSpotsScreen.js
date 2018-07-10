@@ -18,7 +18,7 @@ class ListSpotsScreen extends Component {
         return {
             title: "MY SPOTS",
             headerStyle: { backgroundColor: '#FF9100'},
-            headerTitleStyle: { color: '#F5F5F5' }
+            headerTitleStyle: { color: '#424242' }
         }
     };
 

@@ -30,7 +30,7 @@ class GridView extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, flexDirection: 'column' }}>
+            <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#EEEEEE' }}>
                 <ListView
                     enableEmptySections
                     dataSource={this.dataSource}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StatusBar } from 'react-native';
 import { Permissions, ImagePicker } from 'expo';
+import { StackActions } from 'react-navigation';
 import CancelSaveButton from "../../components/common/CancelSaveButton";
 import SpotPreview from "../../components/common/SpotPreview";
 import AddMarkForm from "../../components/AddMarkForm/AddMarkForm";
@@ -8,9 +9,7 @@ import { clearSpotForm } from "../../actions/FormActions";
 import { connect } from 'react-redux'
 
 import {
-    spotTitleUpdate,
-    spotAddressUpdate,
-    spotNotesUpdate
+    saveSpot
 } from "../../actions/SpotActions";
 
 class AddSpotScreen extends Component {
@@ -23,15 +22,31 @@ class AddSpotScreen extends Component {
 
     // onPress button action to complete save spot.
     onPressSave() {
-        const { title, address, notes } = this.props;
-
-        this.props.saveSpot(
-            //this.props.currentLocation,
+        const {
+            latitude,
+            longitude,
+            latitudeDelta,
+            longitudeDelta,
             title,
             address,
-            notes
+            notes,
+            photos
+        } = this.props;
+
+        this.props.saveSpot(
+            latitude,
+            longitude,
+            latitudeDelta,
+            longitudeDelta,
+            title,
+            address,
+            notes,
+            photos
         );
 
+        // Clear form  after submitting and resetting the Map Screen Stack to add another
+        this.props.clearSpotForm();
+        this.props.navigation.dispatch(StackActions.popToTop());
         this.props.navigation.navigate('listSpots');
     }
 
@@ -62,20 +77,29 @@ const mapStateToProps = state => {
         latitude,
         longitude,
         latitudeDelta,
-        longitudeDelta
+        longitudeDelta,
     } = state.map;
+
+    const {
+        title,
+        address,
+        notes,
+        photos
+    } = state.form;
 
     return {
         latitude,
         longitude,
         longitudeDelta,
-        latitudeDelta
+        latitudeDelta,
+        title,
+        address,
+        notes,
+        photos
     };
 };
 
 export default connect(mapStateToProps, {
-    spotTitleUpdate,
-    spotAddressUpdate,
-    spotNotesUpdate,
-    clearSpotForm
+    clearSpotForm,
+    saveSpot
 })(AddSpotScreen);

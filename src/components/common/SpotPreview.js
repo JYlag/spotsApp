@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
+import { SCREEN_WIDTH } from "../../reducers/CONST_VALUES";
 
 class SpotPreview extends Component {
 
@@ -21,6 +19,7 @@ class SpotPreview extends Component {
               region={this.props.region}
               style={[ styles.mapStyle, this.props.mapStyle]}
               scrollEnabled={false}
+              zoomEnabled={false}
               >
                   <Marker
                   coordinate={this.state.coordinate}

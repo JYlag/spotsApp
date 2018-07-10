@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableWithoutFeedback } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import Arrow from 'react-native-vector-icons/MaterialCommunityIcons';
 
 class SpotList extends Component {
@@ -11,12 +12,21 @@ class SpotList extends Component {
             <View style={{flex: 1}}>
                 <View style={styles.spotContainer}>
                     <View style={styles.spotStyle}>
-                        <Text style={{ fontSize: 20, fontWeight: '600' }}>Test</Text>
-                        <Text style={{ fontSize: 15, fontWeight: '300'}}>Location</Text>
+                        <Text style={{ fontSize: 20, fontWeight: '600' }}>{ spot.title }</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '300'}}>{ spot.address }</Text>
                     </View>
                     <View style={{ justifyContent: 'center', alignSelf: 'center'}}>
                         <TouchableWithoutFeedback
-                        onPress={() => {console.log('hi')}}
+                        onPress={() => {this.props.navigation.navigate('spot', {
+                            latitude: spot.latitude,
+                            longitude: spot.longitude,
+                            latitudeDelta: spot.latitudeDelta,
+                            longitudeDelta: spot.longitudeDelta,
+                            title: spot.title,
+                            address: spot.address,
+                            notes: spot.notes,
+                            photos: spot.photos
+                        })}}
                         >
                             <Arrow
                             name="chevron-right"
@@ -49,4 +59,4 @@ const styles = {
     }
 }
 
-export default SpotList;
+export default withNavigation(SpotList);

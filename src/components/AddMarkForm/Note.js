@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions } from 'react-native';
+import { SCREEN_WIDTH } from "../../reducers/CONST_VALUES";
 import BulletPoint from 'react-native-vector-icons/Octicons';
-
-const BULLET_POINT = '\u2022';
-const SCREEN_WIDTH = Dimensions.get('window').width;
 
 class Note extends Component {
     render() {

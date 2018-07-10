@@ -1,9 +1,8 @@
 import React , { Component } from 'react';
-import { View, Text, Dimensions } from 'react-native';
-import MapView from 'react-native-maps';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
+import { SCREEN_WIDTH } from "../../reducers/CONST_VALUES";
+import Arrow from 'react-native-vector-icons/MaterialCommunityIcons';
 import SpotPreview from "./SpotPreview";
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
 
 class SpotCard extends Component {
 
@@ -25,8 +24,16 @@ class SpotCard extends Component {
                   />
               </View>
               <View style={styles.infoStyle}>
-                  <View style={{ paddingHorizontal: 10, paddingVertical: 8, backgroundColor: '#FFFFFF' }}>
-                    <Text style={{ fontSize: 22 }}>{spot.title}</Text>
+                  <View style={styles.infoSection}>
+                      <View style={{ flex: 1, justifyContent: 'center'}}>
+                          <Text style={{ fontSize: 22 }}>{spot.title}</Text>
+                      </View>
+                      <TouchableWithoutFeedback>
+                          <Arrow
+                          name="chevron-right"
+                          size={36}
+                          />
+                      </TouchableWithoutFeedback>
                   </View>
               </View>
           </View>
@@ -57,6 +64,12 @@ const styles = {
         borderTopWidth: 1,
         borderColor: '#E0E0E0',
         flexDirection: 'column'
+    },
+    infoSection: {
+        paddingHorizontal: 10,
+        paddingVertical: 8,
+        backgroundColor: '#FFFFFF',
+        flexDirection: 'row'
     }
 }
 

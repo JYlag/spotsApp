@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { Permissions, ImagePicker } from 'expo';
 import AddImage from 'react-native-vector-icons/MaterialCommunityIcons';
 import { formPhotoUpdate } from "../../actions/FormActions";
+import { RNS3 } from 'react-native-aws3';
 import { connect } from 'react-redux';
 
 class PhotoSection extends Component {
@@ -26,12 +27,24 @@ class PhotoSection extends Component {
             aspect: [4, 3],
         });
 
+        // IF photo is chosen, we will create an image object containing
+        // File name, file type, and URI and then sending it to the reducer.
         if (!result.cancelled) {
-            //this.setState({ picture: { uri: result.uri } });
-            this.state.tempPhotos.push(result.uri);
+            console.log(result);
+            const uri = result.uri;
+            const ext = uri.substr(uri.lastIndexOf('.') + 1);
+            const name = Math.round(new Date()/1000);
+            let image = {
+                name: name+"."+ext,
+                type: result.type+"/"+ext,
+                uri
+            };
+            this.state.tempPhotos.push(image);
         }
 
+        // Additional setState call to rerender component.
         this.setState({ tempPhotos: this.state.tempPhotos});
+
         this.props.formPhotoUpdate(this.state.tempPhotos);
     };
 
@@ -54,7 +67,6 @@ class PhotoSection extends Component {
     };
 
     renderPhotos() {
-        // TODO: Map through photos state and render each photo horizontally
         if ( this.props.photos.length !== 0 ) {
             return this.props.photos.map((photo, key) => {
                 return (
@@ -62,7 +74,7 @@ class PhotoSection extends Component {
                         <TouchableOpacity
                         onPress={this.changeImage}
                         >
-                            <Image source={{uri: photo}} style={{height: 70, width: 70}}/>
+                            <Image source={{uri: photo.uri}} style={{height: 70, width: 70}}/>
                         </TouchableOpacity>
                     </View>
                 );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Dimensions} from 'react-native';
+import { SCREEN_HEIGHT } from "../../reducers/CONST_VALUES";
 import Modal from 'react-native-modal';
 import Plus from 'react-native-vector-icons/MaterialCommunityIcons';
 import Note from "./Note";
@@ -7,8 +8,6 @@ import Check from 'react-native-vector-icons/MaterialCommunityIcons';
 import Cancel from 'react-native-vector-icons/MaterialCommunityIcons';
 import { formNoteUpdate } from "../../actions/FormActions";
 import { connect } from 'react-redux'
-
-const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class NotesList extends Component {
 
