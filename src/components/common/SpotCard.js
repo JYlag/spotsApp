@@ -1,5 +1,6 @@
 import React , { Component } from 'react';
 import { View, Text, TouchableWithoutFeedback } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { SCREEN_WIDTH } from "../../reducers/CONST_VALUES";
 import Arrow from 'react-native-vector-icons/MaterialCommunityIcons';
 import SpotPreview from "./SpotPreview";
@@ -28,7 +29,18 @@ class SpotCard extends Component {
                       <View style={{ flex: 1, justifyContent: 'center'}}>
                           <Text style={{ fontSize: 22 }}>{spot.title}</Text>
                       </View>
-                      <TouchableWithoutFeedback>
+                      <TouchableWithoutFeedback
+                      onPress={ () => {this.props.navigation.navigate('spot', {
+                          latitude: spot.latitude,
+                          longitude: spot.longitude,
+                          latitudeDelta: spot.latitudeDelta,
+                          longitudeDelta: spot.longitudeDelta,
+                          title: spot.title,
+                          address: spot.address,
+                          notes: spot.notes,
+                          photos: spot.photos
+                      })}}
+                      >
                           <Arrow
                           name="chevron-right"
                           size={36}
@@ -73,4 +85,4 @@ const styles = {
     }
 }
 
-export default SpotCard;
+export default withNavigation(SpotCard);
