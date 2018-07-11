@@ -29,7 +29,7 @@ class Spot extends Component {
     renderNotes() {
         let notes = this.props.navigation.getParam('notes');
 
-        if ( notes.length > 0 ) {
+        if ( notes ) {
             return notes.map( note => {
                 return (
                     <Note
@@ -46,7 +46,7 @@ class Spot extends Component {
     renderPhotos() {
         let photos = this.props.navigation.getParam('photos');
 
-        if ( photos.length > 0 ) {
+        if ( photos ) {
             return photos.map( photo => {
                 return (
                     <View key={photo}>

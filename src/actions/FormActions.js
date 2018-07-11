@@ -29,9 +29,6 @@ export const formAddressUpdate = (address) => {
 };
 
 export const formPhotoUpdate = (photos) => {
-
-    console.log(photos);
-
     return {
         type: FORM_PHOTO_UPDATE,
         payload: photos

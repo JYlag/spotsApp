@@ -106,4 +106,4 @@ const mapStateToProps = state => {
     return { title, address };
 };
 
-export default connect(mapStateToProps, { formTitleUpdate, formAddressUpdate, formPhotoUpdate} )(AddMarkForm);
+export default connect(mapStateToProps, { formTitleUpdate, formAddressUpdate } )(AddMarkForm);

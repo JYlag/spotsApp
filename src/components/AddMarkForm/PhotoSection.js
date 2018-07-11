@@ -31,7 +31,6 @@ class PhotoSection extends Component {
         // IF photo is chosen, we will create an image object containing
         // File name, file type, and URI and then sending it to the reducer.
         if (!result.cancelled) {
-            console.log(result);
             const uri = result.uri;
             const ext = uri.substr(uri.lastIndexOf('.') + 1);
             const name = Math.round(new Date()/1000);

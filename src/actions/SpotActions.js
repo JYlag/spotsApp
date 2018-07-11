@@ -10,7 +10,7 @@ import {
 } from "../actions/types";
 import {CLEAR_SPOT_FORM} from "./types";
 
-export const saveSpot = (latitude, longitude, latitudeDelta, longitudeDelta, title='', address='', notes=[], photos) => async (dispatch) => {
+export const saveSpot = (latitude, longitude, latitudeDelta, longitudeDelta, title='', address='', notes=[''], photos=['']) => async (dispatch) => {
     saveToFirebase(dispatch, latitude, longitude, latitudeDelta, longitudeDelta, title, address, notes, photos);
     /*return (dispatch) => {
 
@@ -68,6 +68,7 @@ export const fetchSpots = () => {
 };
 
 const saveToFirebase = async (dispatch, latitude, longitude, latitudeDelta, longitudeDelta, title, address, notes, photos) => {
+    //console.log(latitude, longitude, latitudeDelta, longitudeDelta, title, address, notes, photos );
     const { currentUser } = firebase.auth();
     const post = {};
 
@@ -78,14 +79,20 @@ const saveToFirebase = async (dispatch, latitude, longitude, latitudeDelta, long
     post['title'] = title;
     post['address'] = address;
     post['notes'] = notes;
+    //console.log(photos);
+    //console.log(post);
 
     if ( photos.length > 0 ) {
 
         post['photos'] = [];
+        //console.log(photos);
 
-        for ( var i = 0; i < photos.length; i++) {
+        for ( let i = 0; i < photos.length; i++) {
+            console.log('this worked')
             await RNS3.put(photos[i], options).then( response => {
                 if (response.status === 201) {
+                    console.log(response);
+                    console.log("RSN3 WOrked");
                     let location = response.body.postResponse.location;
                     post['photos'].push(location);
                 }
@@ -99,6 +106,7 @@ const saveToFirebase = async (dispatch, latitude, longitude, latitudeDelta, long
             });
 
     } else {
+        console.log('NO PHOTOS!');
         firebase.database().ref(`users/${currentUser.uid}/spots`)
             .push(post)
             .then(() => {
