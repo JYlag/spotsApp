@@ -9,9 +9,11 @@ export const LOGIN_USER_SUCCESS = 'login _user_success';
 export const LOGIN_USER_FAIL = 'login_user_fail';
 export const SIGN_OUT = 'sign_out';
 
+export const EMAIL_CHANGED = 'email_changed';
 export const USERNAME_UPDATED = 'username_updated';
 export const PASSWORD_UPDATED = 'password_updated';
 export const VERIFY_CHANGED = 'verify_changed';
+export const RESET_AUTH_FORM = 'reset_auth_form';
 
 //===== FORM TYPES =====>
 export const FORM_NOTE_UPDATE = 'form_note_update';

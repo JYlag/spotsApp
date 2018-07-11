@@ -23,12 +23,12 @@ class MapScreen extends Component {
 
     // Fetches current location before the component renders to provide currentLocation on user.
     // Adds listener and provides a callback function when this screen is focused.
-    componentDidMount() {
+    async componentDidMount() {
         const navigationWillFocusListener = this.props.navigation.addListener('willFocus', () => {
             this.getCurrentLocation();
-        })
+        });
 
-        navigationWillFocusListener;
+        await navigationWillFocusListener;
     }
 
     //===== METHODS =======>
@@ -108,13 +108,13 @@ class MapScreen extends Component {
                 <MapButton
                     text="Mark Spot"
                     onPress={this.onPressMarkButton.bind(this)}
-                    buttonStyle={{ backgroundColor: '#FFA000', bottom: 25, alignSelf: 'center' }}
-                    underlayColor="#FF8F00"
+                    buttonStyle={{ backgroundColor: '#FFAB40', bottom: 25, alignSelf: 'center' }}
+                    underlayColor="#FF9100"
                 />
                 <CurrentLocationButton
-                    buttonStyle={{ backgroundColor: '#FFA000', bottom: 25, right: 15 }}
+                    buttonStyle={{ backgroundColor: '#FFAB40', bottom: 25, right: 15 }}
                     onPress={this.getCurrentLocation}
-                    underlayColor="#FF8F00"
+                    underlayColor="#FF9100"
                 />
             </View>
         );

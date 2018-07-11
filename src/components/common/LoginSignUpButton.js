@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 import Spinner from "./Spinner";
+import TextBody from "./TextBody";
 
 class LoginSignUpButton extends Component {
 
@@ -34,7 +35,7 @@ class LoginSignUpButton extends Component {
                     underlayColor="#0277BD"
                     onPress={this.props.onSignUpPress}
                 >
-                    <Text style={styles.buttonTextStyle}>Sign Up</Text>
+                    <TextBody style={[styles.buttonTextStyle, this.props.buttonTextStyle]}>Sign Up</TextBody>
                 </TouchableHighlight>
             );
         }
@@ -49,7 +50,7 @@ class LoginSignUpButton extends Component {
                     underlayColor="#2E7D32"
                     onPress={this.props.onLoginPress}
                 >
-                    <Text style={styles.buttonTextStyle}>Login</Text>
+                    <TextBody style={[styles.buttonTextStyle, this.props.buttonTextStyle]}>Login</TextBody>
                 </TouchableHighlight>
             )
         }
@@ -83,8 +84,9 @@ const styles = {
     },
     buttonTextStyle: {
         flex: 1,
-        fontSize: 19,
-        color: '#ffffff'
+        fontSize: 20,
+        color: '#ffffff',
+        fontFamily: 'Quicksand-Bold'
     }
 }
 

@@ -4,12 +4,14 @@ import firebase from 'firebase';
 
 //====== IMPORTED ACTION TYPES ========
 import {
+    EMAIL_CHANGED,
     FACEBOOK_LOG_OUT,
     FACEBOOK_LOGIN_FAIL,
     FACEBOOK_LOGIN_SUCCESS,
     LOGIN_USER, LOGIN_USER_FAIL,
     LOGIN_USER_SUCCESS,
-    PASSWORD_UPDATED,
+    PASSWORD_UPDATED, RESET_AUTH_FORM,
+    SIGN_OUT,
     USERNAME_UPDATED,
     VERIFY_CHANGED
 } from "./types";
@@ -18,6 +20,13 @@ export const usernameChanged = (text) => {
     return  {
       type: USERNAME_UPDATED,
       payload: text
+    }
+};
+
+export const emailChanged = (text) => {
+    return {
+        type: EMAIL_CHANGED,
+        payload: text
     }
 };
 
@@ -67,6 +76,9 @@ export const logOut = () => async dispatch => {
         AsyncStorage.removeItem('fb_token');
         dispatch({ type: FACEBOOK_LOG_OUT });
     }
+
+    dispatch({ type: SIGN_OUT });
+
 };
 
 export const loginUser = ({ username, password }, callback) => {
@@ -92,4 +104,10 @@ const loginUserFail = (dispatch) => {
     dispatch({
         type: LOGIN_USER_FAIL
     });
+};
+
+export const resetAuthForm = () => {
+    return {
+        type: RESET_AUTH_FORM
+    };
 };

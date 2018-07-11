@@ -17,8 +17,8 @@ class ListSpotsScreen extends Component {
     static navigationOptions = ({navigation}) => {
         return {
             title: "MY SPOTS",
-            headerStyle: { backgroundColor: '#FF9100'},
-            headerTitleStyle: { color: '#424242' }
+            headerStyle: { backgroundColor: '#FFAB40'},
+            headerTitleStyle: { color: '#424242', fontFamily: 'Quicksand-Bold', fontSize: 25 }
         }
     };
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import Arrow from 'react-native-vector-icons/MaterialCommunityIcons';
+import TextBody from "./TextBody";
 
 class SpotList extends Component {
     render() {
@@ -12,8 +13,8 @@ class SpotList extends Component {
             <View style={{flex: 1}}>
                 <View style={styles.spotContainer}>
                     <View style={styles.spotStyle}>
-                        <Text style={{ fontSize: 20, fontWeight: '600' }}>{ spot.title }</Text>
-                        <Text style={{ fontSize: 15, fontWeight: '300'}}>{ spot.address }</Text>
+                        <TextBody style={{ fontSize: 19, fontFamily: 'SFCompactText-Semibold' }}>{ spot.title }</TextBody>
+                        <TextBody style={{ fontSize: 15, fontFamily: 'SFCompactText-LightItalic'}}>{ spot.address }</TextBody>
                     </View>
                     <View style={{ justifyContent: 'center', alignSelf: 'center'}}>
                         <TouchableWithoutFeedback

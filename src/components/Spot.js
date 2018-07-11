@@ -35,6 +35,7 @@ class Spot extends Component {
                     <Note
                         key={note}
                         note={note}
+                        noteTextStyle={{ fontSize: 15}}
                     />
                 );
             });
@@ -124,28 +125,35 @@ class Spot extends Component {
                             </MapView>
                         </View>
                         <View style={styles.spotTextContainer}>
-                            <Text style={{ fontSize: 24, fontWeight: '600'}}>{getParam('title')}</Text>
-                            <Text style={{ fontSize: 18, fontWeight: '300'}}>{getParam('address')}</Text>
-                            <Text style={{ fontSize: 14, fontWeight: '300'}}>Date Saved</Text>
+                            <Text style={{ fontSize: 24, fontFamily: 'Quicksand-Bold'}}>{getParam('title')}</Text>
+                            <Text style={{ fontSize: 18, fontFamily: 'SFCompactText-RegularItalic'}}>{getParam('address')}</Text>
+                            <Text style={{ fontSize: 14, fontFamily: 'SFCompactText-LightItalic'}}>Date Saved</Text>
                         </View>
                     </View>
 
                     <View style={styles.noteSection}>
-                        <Text style={{ fontSize: 24, fontWeight: '500' }}>Notes</Text>
+                        <Text style={{ fontSize: 24, fontFamily: 'SFCompactText-Bold'}}>Notes</Text>
                         <View style={styles.noteContainer}>
                             {this.renderNotes()}
                         </View>
                     </View>
 
                     <View style={styles.photoSection}>
-                        <Text style={{ fontSize: 24, fontWeight: '500' }}>Photos</Text>
+                        <Text style={{ fontSize: 24, fontFamily: 'SFCompactText-Bold'}}>Photos</Text>
                         <View style={styles.photoContainer}>
                             {this.renderPhotos()}
                         </View>
                     </View>
 
                     <OptionButton
+                    buttonText="Directions to Spot"
                     onPress={this.goToDirections.bind(this)}
+                    buttonTextStyle={{ fontFamily: 'SFCompactText-Bold'}}
+                    />
+                    <OptionButton
+                        buttonText="Share Spot"
+                        onPress={() => {console.log('hi')}}
+                        buttonTextStyle={{ fontFamily: 'SFCompactText-Bold'}}
                     />
 
                 </ScrollView>

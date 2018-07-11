@@ -7,10 +7,11 @@ import {
     LOGIN_USER,
     LOGIN_USER_SUCCESS,
     LOGIN_USER_FAIL,
-    VERIFY_CHANGED
+    VERIFY_CHANGED, SIGN_OUT, EMAIL_CHANGED, RESET_AUTH_FORM
 } from "../actions/types";
 
 const INITIAL_STATE = {
+    email: '',
     username: '',
     password: '',
     verify: '',
@@ -23,6 +24,8 @@ const INITIAL_STATE = {
 
 export default function(state = INITIAL_STATE, action) {
     switch ( action.type ) {
+        case EMAIL_CHANGED:
+            return {...state, email: action.payload};
         case USERNAME_UPDATED:
             return { ...state, username: action.payload };
         case PASSWORD_UPDATED:
@@ -40,14 +43,22 @@ export default function(state = INITIAL_STATE, action) {
         case LOGIN_USER_SUCCESS:
             return {...state,
             ...INITIAL_STATE,
-            user: action.payload}
+            user: action.payload};
         case LOGIN_USER_FAIL:
             return {
                 ...state,
                 error: 'Invalid Username or Password',
                 password: '',
                 loading: false
-            }
+            };
+        case SIGN_OUT:
+            return {
+                ...INITIAL_STATE
+            };
+        case RESET_AUTH_FORM:
+            return {
+                ...INITIAL_STATE
+            };
         default:
             return state;
     }

@@ -4,6 +4,7 @@ import { withNavigation } from 'react-navigation';
 import { SCREEN_WIDTH } from "../../reducers/CONST_VALUES";
 import Arrow from 'react-native-vector-icons/MaterialCommunityIcons';
 import SpotPreview from "./SpotPreview";
+import TextBody from "./TextBody";
 
 class SpotCard extends Component {
 
@@ -27,7 +28,7 @@ class SpotCard extends Component {
               <View style={styles.infoStyle}>
                   <View style={styles.infoSection}>
                       <View style={{ flex: 1, justifyContent: 'center'}}>
-                          <Text style={{ fontSize: 22 }}>{spot.title}</Text>
+                          <TextBody style={{ fontSize: 22, fontFamily: 'SFCompactText-Regular', fontWeight: '700' }}>{spot.title}</TextBody>
                       </View>
                       <TouchableWithoutFeedback
                       onPress={ () => {this.props.navigation.navigate('spot', {
@@ -79,7 +80,7 @@ const styles = {
     },
     infoSection: {
         paddingHorizontal: 10,
-        paddingVertical: 8,
+        paddingVertical: 7,
         backgroundColor: '#FFFFFF',
         flexDirection: 'row'
     }

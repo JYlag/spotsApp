@@ -8,6 +8,7 @@ import Check from 'react-native-vector-icons/MaterialCommunityIcons';
 import Cancel from 'react-native-vector-icons/MaterialCommunityIcons';
 import { formNoteUpdate } from "../../actions/FormActions";
 import { connect } from 'react-redux'
+import TextBody from "../common/TextBody";
 
 class NotesList extends Component {
 
@@ -113,7 +114,7 @@ class NotesList extends Component {
             <View>
                 <View style={styles.notesContainer}>
                     <View style={{ flexDirection: 'row'}}>
-                        <Text style={styles.notesHeader}>Notes</Text>
+                        <TextBody style={styles.notesHeader}>Notes</TextBody>
                         <View style={{ alignSelf: 'center', justifyContent: 'center' }}>
                             <TouchableOpacity
                             onPress={this.onAddPress.bind(this)}
@@ -144,8 +145,7 @@ const styles = {
         marginHorizontal: 10
     },
     notesHeader: {
-        fontSize: 24,
-        fontWeight: '300'
+        fontSize: 24
     },
     modalStyle: {
         backgroundColor: 'white',

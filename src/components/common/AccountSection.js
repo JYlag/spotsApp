@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, Button, TouchableOpacity } from 'react-native';
 import { ImagePicker, Permissions } from 'expo';
 import images from '../../assets/images/index';
+import TextBody from "./TextBody";
 
 
 class AccountSection extends Component {
@@ -40,8 +41,8 @@ class AccountSection extends Component {
                     <Image source={this.state.picture} style={styles.profilePicture} />
                   </TouchableOpacity>
                   <View style={styles.profileDetailsContainer}>
-                      <Text style={styles.nameStyle}>Joe Ylagan</Text>
-                      <Text style={styles.biographyStyle}>Hi I'm from Seattle Hi I'm from Seattle Hi I'm from Seattle</Text>
+                      <TextBody style={styles.nameStyle}>Joe Ylagan</TextBody>
+                      <TextBody style={styles.biographyStyle}>Hi I'm from Seattle Hi I'm from Seattle Hi I'm from Seattle</TextBody>
                   </View>
               </View>
           </View>
@@ -68,12 +69,14 @@ const styles = {
         width: '70%'
     },
     nameStyle: {
-        fontSize: 16,
+        fontSize: 17,
         fontWeight: '700',
+        fontFamily: 'SFCompactDisplay-Semibold'
     },
     biographyStyle: {
         marginTop: 5,
-        fontSize: 11
+        fontSize: 12,
+        fontFamily: 'SFCompactText-Light'
     }
 }
 

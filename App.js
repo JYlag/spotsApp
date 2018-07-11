@@ -3,8 +3,9 @@ import { StyleSheet, View } from 'react-native';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import store from './src/store';
+import { Font } from 'expo';
 import firebase from 'firebase';
-import { RNS3 } from 'react-native-aws3';
+import Fonts from './src/assets/fonts/index';
 
 // ===== ICON IMPORTS =====>
 import HomeIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -12,7 +13,6 @@ import MapIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ListIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 //======SCREEN IMPORTS========
-import WelcomeScreen from './src/screens/main/WelcomeScreen';
 import FacebookLogin from './src/screens/auth/FacebookLogin';
 import LoginScreen from './src/screens/auth/LogInScreen';
 import SignUpScreen from './src/screens/auth/SignUpScreen';
@@ -31,6 +31,7 @@ const config = {
     storageBucket: "spots-81d2c.appspot.com",
     messagingSenderId: "365097605984"
 };
+
 export const options = {
     keyPrefix: 'photos/',
     bucket: "spots-jylagan",
@@ -40,28 +41,26 @@ export const options = {
     successActionStatus: 201
 };
 
+
 export default class App extends React.Component {
 
 
 
-    componentDidMount() {
+    async componentDidMount() {
+        await Font.loadAsync(Fonts);
         firebase.initializeApp(config);
     }
 
     render() {
 
-        /*home: {
-            screen: createStackNavigator({
-                home: {screen: Home},
-                settings: {screen: Settings}
-            }),
-                navigationOptions: () => ({
-                tabBarIcon: () => {
-                    return <HomeIcon name="home" size={25}/>;
-                }
-            })
-
-        }*/
+        let AuthStack = createStackNavigator({
+            login: { screen: LoginScreen},
+            signup: { screen: SignUpScreen }
+        }, {
+            navigationOptions: {
+                header: null
+            }
+        });
 
         let HomeStack = createStackNavigator({
             home: { screen: Home },
@@ -80,15 +79,6 @@ export default class App extends React.Component {
         let ListSpotsStack = createStackNavigator({
             listSpots: { screen: ListSpots },
             spot: { screen: Spot }
-        });
-
-        let AuthStack = createStackNavigator({
-            login: { screen: LoginScreen},
-            signup: { screen: SignUpScreen }
-        }, {
-            navigationOptions: {
-                header: null
-            }
         });
 
         let MainStack = createBottomTabNavigator({
@@ -127,7 +117,6 @@ export default class App extends React.Component {
 
         const MainNavigator = createBottomTabNavigator({
               auth: AuthStack,
-              welcome: {screen: WelcomeScreen},
               main: MainStack
           }, {
               navigationOptions: {

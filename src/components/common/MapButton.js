@@ -39,8 +39,8 @@ const styles = {
     buttonTextStyle: {
         alignSelf: 'center',
         color: '#FFFFFF',
-        fontSize: 16,
-        fontWeight: '600',
+        fontSize: 19,
+        fontFamily: 'Quicksand-Bold',
         paddingTop: 10,
         paddingBottom: 10
     }

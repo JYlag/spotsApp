@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Dimensions } from 'react-native';
 import { SCREEN_WIDTH } from "../../reducers/CONST_VALUES";
 import BulletPoint from 'react-native-vector-icons/Octicons';
+import TextBody from "../common/TextBody";
 
 class Note extends Component {
     render() {
@@ -14,7 +15,7 @@ class Note extends Component {
                     />
                 </View>
                 <View>
-                    <Text style={{ paddingLeft: 5, paddingBottom: 5 }}>{this.props.note}</Text>
+                    <TextBody style={[styles.noteTextStyle, this.props.noteTextStyle]}>{this.props.note}</TextBody>
                 </View>
             </View>
         );
@@ -25,6 +26,10 @@ const styles = {
     noteContainer: {
         flexDirection: 'row',
         width: SCREEN_WIDTH*0.85
+    },
+    noteTextStyle: {
+        paddingLeft: 5,
+        paddingBottom: 5
     }
 }
 

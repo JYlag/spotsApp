@@ -13,8 +13,8 @@ class HomeScreen extends Component {
                 >
                     <Gear name="settings" size={22} style={{marginRight: 10, color: '#424242'}}/>
                 </TouchableWithoutFeedback>,
-            headerStyle: { backgroundColor: '#FF9100'},
-            headerTitleStyle: { color: '#424242' }
+            headerStyle: { backgroundColor: '#FFAB40'},
+            headerTitleStyle: { color: '#424242', fontFamily: 'Quicksand-Bold', fontSize: 25}
         }
     }
 

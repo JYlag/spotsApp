@@ -5,6 +5,7 @@ import AddImage from 'react-native-vector-icons/MaterialCommunityIcons';
 import { formPhotoUpdate } from "../../actions/FormActions";
 import { RNS3 } from 'react-native-aws3';
 import { connect } from 'react-redux';
+import TextBody from "../common/TextBody";
 
 class PhotoSection extends Component {
 
@@ -82,9 +83,9 @@ class PhotoSection extends Component {
         } else {
             return (
               <View>
-                  <Text style={styles.noPhoto}>
+                  <TextBody style={styles.noPhoto}>
                       Photos
-                  </Text>
+                  </TextBody>
               </View>
             );
         }
@@ -126,8 +127,7 @@ const styles = {
         justifyContent: 'space-around'
     },
     noPhoto: {
-        fontSize: 24,
-        fontWeight: '300'
+        fontSize: 24
     },
     pictureStyle: {
         borderRadius: 5,

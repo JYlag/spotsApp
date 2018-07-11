@@ -10,7 +10,7 @@ class OptionButton extends Component {
                 onPress={this.props.onPress}
                 >
                     <View style={{ flexDirection: 'row', marginLeft: 10 }}>
-                        <Text style={{ fontSize: 20, fontWeight: '400', flex: 1, alignSelf: 'center', justifyContent: 'center' }}>Directions to Spot</Text>
+                        <Text style={[styles.buttonTextStyle, this.props.buttonTextStyle]}>{this.props.buttonText}</Text>
                         <View style={{ alignItems: 'center', justifyContent: 'center'}}>
                             <Arrow
                                 name="chevron-right"
@@ -29,8 +29,15 @@ const styles = {
         borderTopWidth: 1,
         borderBottomWidth: 1,
         borderColor: '#E0E0E0',
-        marginVertical: 3
+        paddingVertical: 5
     },
+    buttonTextStyle: {
+        fontSize: 21,
+        flex: 1,
+        alignSelf: 'center',
+        justifyContent: 'center'
+    }
+
 
 }
 
