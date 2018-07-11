@@ -2,53 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a03de97f-0cd6-4b65-b41c-bde233c01ca3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/Quicksand-Bold.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/Quicksand-Regular.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactDisplay-Black.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactDisplay-Bold.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactDisplay-Heavy.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactDisplay-Light.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactDisplay-Medium.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactDisplay-Regular.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactDisplay-Semibold.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactDisplay-Thin.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactDisplay-Ultralight.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-Bold.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-BoldItalic.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-Heavy.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-HeavyItalic.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-Light.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-LightItalic.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-Medium.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-MediumItalic.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-Regular.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-RegularItalic.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-Semibold.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/SFCompactText-SemiboldItalic.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/fonts/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/common/TextBody.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/screens/main/WelcomeScreen.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App.js" afterPath="$PROJECT_DIR$/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/AuthActions.js" afterPath="$PROJECT_DIR$/src/actions/AuthActions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/types.js" afterPath="$PROJECT_DIR$/src/actions/types.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AddMarkForm/Note.js" afterPath="$PROJECT_DIR$/src/components/AddMarkForm/Note.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AddMarkForm/NotesList.js" afterPath="$PROJECT_DIR$/src/components/AddMarkForm/NotesList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AddMarkForm/PhotoSection.js" afterPath="$PROJECT_DIR$/src/components/AddMarkForm/PhotoSection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Spot.js" afterPath="$PROJECT_DIR$/src/components/Spot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/AccountSection.js" afterPath="$PROJECT_DIR$/src/components/common/AccountSection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/LoginSignUpButton.js" afterPath="$PROJECT_DIR$/src/components/common/LoginSignUpButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/MapButton.js" afterPath="$PROJECT_DIR$/src/components/common/MapButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/OptionButton.js" afterPath="$PROJECT_DIR$/src/components/common/OptionButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/Spinner.js" afterPath="$PROJECT_DIR$/src/components/common/Spinner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/SpotCard.js" afterPath="$PROJECT_DIR$/src/components/common/SpotCard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/common/SpotList.js" afterPath="$PROJECT_DIR$/src/components/common/SpotList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/AuthReducer.js" afterPath="$PROJECT_DIR$/src/reducers/AuthReducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/auth/SignUpScreen.js" afterPath="$PROJECT_DIR$/src/screens/auth/SignUpScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/main/HomeScreen.js" afterPath="$PROJECT_DIR$/src/screens/main/HomeScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/main/ListSpotsScreen.js" afterPath="$PROJECT_DIR$/src/screens/main/ListSpotsScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/main/MapScreen.js" afterPath="$PROJECT_DIR$/src/screens/main/MapScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/main/SettingsScreen.js" afterPath="$PROJECT_DIR$/src/screens/main/SettingsScreen.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,8 +38,8 @@
       <file leaf-file-name="AuthReducer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/AuthReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="56" column="14" lean-forward="true" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+            <state relative-caret-position="0">
+              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -97,18 +51,6 @@
             <state relative-caret-position="225">
               <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SettingsScreen.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/main/SettingsScreen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -151,21 +93,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthActions.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthActions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/AuthActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
+            <state relative-caret-position="1470">
               <caret line="111" column="6" lean-forward="false" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormActions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/FormActions.js">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#415#487#0" expanded="true" />
+                <element signature="e#665#726#0" expanded="true" />
+                <element signature="e#1880#1979#0" expanded="false" />
+                <element signature="e#2014#2058#0" expanded="false" />
+                <element signature="e#2381#2425#0" expanded="false" />
+                <element signature="e#2634#2739#0" expanded="false" />
+                <element signature="e#3038#3181#0" expanded="false" />
+                <element signature="e#3221#3407#0" expanded="false" />
+                <element signature="e#3453#3600#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keys.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/keys.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -202,7 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/common/PhotoSection.js" />
         <option value="$PROJECT_DIR$/src/components/AddMarkForm.js" />
         <option value="$PROJECT_DIR$/src/reducers/MapReducer.js" />
         <option value="$PROJECT_DIR$/src/actions/MapActions.js" />
@@ -226,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/actions/SpotActions.js" />
         <option value="$PROJECT_DIR$/options.js" />
         <option value="$PROJECT_DIR$/src/components/Text/TextHeader.js" />
-        <option value="$PROJECT_DIR$/App.js" />
         <option value="$PROJECT_DIR$/src/components/common/CancelSaveButton.js" />
         <option value="$PROJECT_DIR$/src/screens/auth/LogInScreen.js" />
         <option value="$PROJECT_DIR$/src/components/Text/TextButton.js" />
@@ -253,6 +214,8 @@
         <option value="$PROJECT_DIR$/src/reducers/AuthReducer.js" />
         <option value="$PROJECT_DIR$/src/screens/auth/SignUpScreen.js" />
         <option value="$PROJECT_DIR$/src/actions/AuthActions.js" />
+        <option value="$PROJECT_DIR$/keys.js" />
+        <option value="$PROJECT_DIR$/App.js" />
       </list>
     </option>
   </component>
@@ -276,7 +239,9 @@
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -489,12 +454,12 @@
       <workItem from="1483231255922" duration="21880000" />
       <workItem from="1530841912419" duration="14811000" />
       <workItem from="1531148247503" duration="1841000" />
-      <workItem from="1531154680056" duration="27902000" />
+      <workItem from="1531154680056" duration="28356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121192000" />
+    <option name="totallyTimeSpent" value="121646000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -554,14 +519,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/reducers/FetchSpotsReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/SpotsReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -827,24 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="92" column="53" lean-forward="false" selection-start-line="92" selection-start-column="47" selection-end-line="92" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#620#681#0" expanded="true" />
-            <element signature="e#1881#1980#0" expanded="false" />
-            <element signature="e#2015#2059#0" expanded="false" />
-            <element signature="e#2382#2426#0" expanded="false" />
-            <element signature="e#2635#2740#0" expanded="false" />
-            <element signature="e#3039#3182#0" expanded="false" />
-            <element signature="e#3222#3408#0" expanded="false" />
-            <element signature="e#3454#3601#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/main/AddSpotScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="922">
@@ -916,7 +855,7 @@
         <state relative-caret-position="240">
           <caret line="16" column="47" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="47" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -979,14 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/AuthReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="56" column="14" lean-forward="true" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/auth/SignUpScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
@@ -1007,9 +938,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/AuthActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
+        <state relative-caret-position="1470">
           <caret line="111" column="6" lean-forward="false" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/AuthReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#415#487#0" expanded="true" />
+            <element signature="e#665#726#0" expanded="true" />
+            <element signature="e#1880#1979#0" expanded="false" />
+            <element signature="e#2014#2058#0" expanded="false" />
+            <element signature="e#2381#2425#0" expanded="false" />
+            <element signature="e#2634#2739#0" expanded="false" />
+            <element signature="e#3038#3181#0" expanded="false" />
+            <element signature="e#3221#3407#0" expanded="false" />
+            <element signature="e#3453#3600#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

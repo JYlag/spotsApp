@@ -6,6 +6,7 @@ import store from './src/store';
 import { Font } from 'expo';
 import firebase from 'firebase';
 import Fonts from './src/assets/fonts/index';
+import {accessKey, secretKey} from "./keys";
 
 // ===== ICON IMPORTS =====>
 import HomeIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -36,8 +37,8 @@ export const options = {
     keyPrefix: 'photos/',
     bucket: "spots-jylagan",
     region: "us-west-2",
-    accessKey: "AKIAJ4F6ZQBVQDSR3WUA",
-    secretKey: "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",
+    accessKey: accessKey,
+    secretKey: secretKey,
     successActionStatus: 201
 };
 
